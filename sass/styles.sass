@@ -1,0 +1,88 @@
+@import compass/reset
+@import compass/css3
+@import ../bower_components/jeet/scss/jeet/index
+@import fonts
+@import color
+
+
+html, body
+	font-family: $gothamid
+	background: $light
+#output
+	+center(900px)
+
+h1
+	font-size: 100px
+	text-align: center
+	font-family: $gothamid
+	margin-bottom: 70px
+	color: $gray
+
+.evento
+	display: flex
+	transition: all .7s ease-in-out
+	.time
+		+col(1/5)
+		background: $gray
+		font-size: 50px
+		color: $light
+		height: 150px
+		position: relative
+		margin-bottom: 50px
+		span
+			+align(both)
+	.apointment
+		+col(4/5)
+		font-size: 30px
+		padding: 20px 10px
+		height: auto
+		text-transform: uppercase
+		color: $gray
+	.when
+		font-size: 20px
+		color: lighten($gray,30%)
+		padding-top: 10px
+		border-top: 1px solid $gray
+
+.evento:nth-child(4n+0) .time
+	+shift(4/5)
+.evento:nth-child(4n+0) .apointment
+	+shift(-1/5)
+
+.evento:hover
+	-webkit-transform: scale(1.4)
+	transform: scale(1.4)
+	margin: 2em
+	.time
+		width: 200px
+.cf
+	+cf()
+
+
+.here
+	+center(600px)
+	text-align: center
+	img
+		text-align: center
+		margin-bottom: 20px
+	button
+		font-family: $gothamid
+		font-size: 20px
+		cursor: pointer
+		width: 100px
+		height: 60px
+		border: none
+		background: none
+		-webkit-transition: color 0.5s
+	button:hover
+		color: lighten($gray,50%)
+
+
+
+
+
+
+
+
+
+

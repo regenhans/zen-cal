@@ -1,0 +1,404 @@
+/* line 5, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../Library/Ruby/Gems/2.0.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/*  Syntax Quick Reference
+  --------------------------
+  column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter)
+  span($ratio: 1, $offset: 0)
+  shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter)
+  unshift()
+  edit()
+  center($max_width: 1410px, $pad: 0)
+  stack($pad: 0, $align: false)
+  unstack()
+  align($direction: both)
+  cf()
+*/
+/**
+ * Grid settings.
+ * All values are defaults and can therefore be easily overidden.
+ */
+/**
+ * List functions courtesy of the wonderful folks at Team Sass.
+ * Check out their awesome grid: Singularity.
+ */
+/**
+ * Get  percentage from a given ratio.
+ * @param {number} [$ratio=1] - The column ratio of the element.
+ * @returns {number} - The percentage value.
+ */
+/**
+ * Work out the column widths based on the ratio and gutter sizes.
+ * @param {number} [$ratios=1] - The column ratio of the element.
+ * @param {number} [$gutter=$jeet-gutter] - The gutter for the column.
+ * @returns {list} $width $gutter - A list containing the with and gutter for the element.
+ */
+/**
+ * Get the set layout direction for the project.
+ * @returns {string} $direction - The layout direction.
+ */
+/**
+ * Replace a specified list value with a new value (uses built in set-nth() if available)
+ * @param {list} $list - The list of values you want to alter.
+ * @param {number} $index - The index of the list item you want to replace.
+ * @param {*} $value - The value you want to replace $index with.
+ * @returns {list} $list - The list with the value replaced or removed.
+ * @warn if an invalid index is supplied.
+ */
+/**
+ * Reverse a list (progressively enhanced for Sass 3.3)
+ * @param {list} $list - The list of values you want to reverse.
+ * @returns {list} $result - The reversed list.
+ */
+/**
+ * Get the opposite direction to a given value.
+ * @param {string} $dir - The direction you want the opposite of.
+ * @returns {string} - The opposite direction to $dir.
+ * @warn if an incorrect string is provided.
+ */
+/**
+ * Style an element as a column with a gutter.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [$cycle=0] - Easily create an nth column grid where $cycle equals the number of columns.
+ * @param {number} [$uncycle=0] - Undo a previous cycle value to allow for a new one.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column mixin.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Get the width of a column and nothing else.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Get the gutter size of a column and nothing else.
+ * @param {number} [ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [gutter=jeet.gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column-width function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * An alias for the column-gutter function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Style an element as a column without any gutters for a seamless row.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [cycle=0] - Easily create an nth column grid where cycle equals the number of columns.
+ * @param {number} [uncycle=0] - Undo a previous cycle value to allow for a new one.
+ */
+/**
+ * Reorder columns without altering the HTML.
+ * @param {number} [$ratios=0] - Specify how far along you want the element to move.
+ * @param {string} [$col-or-span=column] - Specify whether the element has a gutter or not.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Reset an element that has had shift() applied to it.
+ */
+/**
+ * View the grid and its layers for easy debugging.
+ * @param {string} [$color=black] - The background tint applied.
+ * @param {boolean} [$important=false] - Whether to apply the style as !important.
+ */
+/**
+ *  Alias for edit().
+ */
+/**
+ * Horizontally center an element.
+ * @param {number} [$max-width=1410px] - The max width the element can be.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ */
+/**
+ * Uncenter an element.
+ */
+/**
+ * Stack an element so that nothing is either side of it.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ * @param {boolean/string} [$align=false] - Specify the text align for the element.
+ */
+/**
+ * Unstack an element.
+ */
+/**
+ * Center an element on either or both axes.
+ * @requires A parent container with relative positioning.
+ * @param {string} [$direction=both] - Specify which axes to center the element on.
+ */
+/**
+ * Apply a clearfix to an element.
+ */
+@font-face {
+  font-family: "Gotham";
+  src: url('/fonts/../fonts/gotham/gotham.ttf?1436518602') format('truetype');
+}
+@font-face {
+  font-family: "Gotham-medium";
+  src: url('/fonts/../fonts/gotham/gotham-medium.ttf?1436518660') format('truetype');
+}
+@font-face {
+  font-family: "Gotham-black";
+  src: url('/fonts/../fonts/gotham/gotham-black.ttf?1436518632') format('truetype');
+}
+/* line 8, ../sass/styles.sass */
+html, body {
+  font-family: "Gotham-medium";
+  background: #FDFFFA;
+}
+
+/* line 11, ../sass/styles.sass */
+#output {
+  *zoom: 1;
+  width: auto;
+  max-width: 900px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* line 344, ../bower_components/jeet/scss/jeet/_grid.scss */
+#output:before, #output:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../bower_components/jeet/scss/jeet/_grid.scss */
+#output:after {
+  clear: both;
+}
+
+/* line 14, ../sass/styles.sass */
+h1 {
+  font-size: 100px;
+  text-align: center;
+  font-family: "Gotham-medium";
+  margin-bottom: 70px;
+  color: #403E3E;
+}
+
+/* line 21, ../sass/styles.sass */
+.evento {
+  display: flex;
+  transition: all 0.7s ease-in-out;
+}
+/* line 24, ../sass/styles.sass */
+.evento .time {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 17.6%;
+  margin-left: 0%;
+  margin-right: 3%;
+  background: #403E3E;
+  font-size: 50px;
+  color: #FDFFFA;
+  height: 150px;
+  position: relative;
+  margin-bottom: 50px;
+}
+/* line 344, ../bower_components/jeet/scss/jeet/_grid.scss */
+.evento .time:before, .evento .time:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../bower_components/jeet/scss/jeet/_grid.scss */
+.evento .time:after {
+  clear: both;
+}
+/* line 58, ../bower_components/jeet/scss/jeet/_grid.scss */
+.evento .time:last-child {
+  margin-right: 0%;
+}
+/* line 32, ../sass/styles.sass */
+.evento .time span {
+  position: absolute;
+  transform-style: preserve-3d;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* line 34, ../sass/styles.sass */
+.evento .apointment {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 79.4%;
+  margin-left: 0%;
+  margin-right: 3%;
+  font-size: 30px;
+  padding: 20px 10px;
+  height: auto;
+  text-transform: uppercase;
+  color: #403E3E;
+}
+/* line 344, ../bower_components/jeet/scss/jeet/_grid.scss */
+.evento .apointment:before, .evento .apointment:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../bower_components/jeet/scss/jeet/_grid.scss */
+.evento .apointment:after {
+  clear: both;
+}
+/* line 58, ../bower_components/jeet/scss/jeet/_grid.scss */
+.evento .apointment:last-child {
+  margin-right: 0%;
+}
+/* line 41, ../sass/styles.sass */
+.evento .when {
+  font-size: 20px;
+  color: #8d8a8a;
+  padding-top: 10px;
+  border-top: 1px solid #403E3E;
+}
+
+/* line 47, ../sass/styles.sass */
+.evento:nth-child(4n+0) .time {
+  position: relative;
+  left: 82.4%;
+}
+
+/* line 49, ../sass/styles.sass */
+.evento:nth-child(4n+0) .apointment {
+  position: relative;
+  left: -20.6%;
+}
+
+/* line 52, ../sass/styles.sass */
+.evento:hover {
+  -webkit-transform: scale(1.4);
+  transform: scale(1.4);
+  margin: 2em;
+}
+/* line 56, ../sass/styles.sass */
+.evento:hover .time {
+  width: 200px;
+}
+
+/* line 58, ../sass/styles.sass */
+.cf {
+  *zoom: 1;
+}
+/* line 344, ../bower_components/jeet/scss/jeet/_grid.scss */
+.cf:before, .cf:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../bower_components/jeet/scss/jeet/_grid.scss */
+.cf:after {
+  clear: both;
+}
+
+/* line 62, ../sass/styles.sass */
+.here {
+  *zoom: 1;
+  width: auto;
+  max-width: 600px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+}
+/* line 344, ../bower_components/jeet/scss/jeet/_grid.scss */
+.here:before, .here:after {
+  content: '';
+  display: table;
+}
+/* line 349, ../bower_components/jeet/scss/jeet/_grid.scss */
+.here:after {
+  clear: both;
+}
+/* line 65, ../sass/styles.sass */
+.here img {
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* line 68, ../sass/styles.sass */
+.here button {
+  font-family: "Gotham-medium";
+  font-size: 20px;
+  cursor: pointer;
+  width: 100px;
+  height: 60px;
+  border: none;
+  background: none;
+  -webkit-transition: color 0.5s;
+}
+/* line 77, ../sass/styles.sass */
+.here button:hover {
+  color: #c0bdbd;
+}
