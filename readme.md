@@ -9,9 +9,11 @@ You can fork it and build it on your own or just [install-it](http://goo.gl/j0hL
 
 
 ![black mirror](img/black-mirror.png)
+<br>
 Black mirror Christmass Special
-
+<br>
 ![zen calendar](img/zen-1.png)
+<br>
 Zen Calendar
 
 
