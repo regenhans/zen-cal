@@ -8,10 +8,10 @@ Highly inspired by Black Mirrror.
 You can fork it and build it on your own or just [install-it](http://goo.gl/j0hLXL).
 
 
-[black mirror](img/black-mirror.png)
+![black mirror](img/black-mirror.png)
 Black mirror Christmass Special
 
-[zen calendar](img/zen-1.png)
+![zen calendar](img/zen-1.png)
 Zen Calendar
 
 
