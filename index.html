@@ -1,19 +1,20 @@
 <html>
   <head>
-    <title>Zen-Cal Beta</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
-    <link rel="stylesheet" type="text/css" href="./stylesheets/animate.css">
+    <title>New Tab</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
     <meta charset="utf-8">
     <script type="text/javascript" charset="UTF-8" src="js/load.js"></script>
-    <script src="https://apis.google.com/js/client.js?onload=checkAuth">
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
 
-    </script>
   </head>
   <body>
-    
+
     <pre id="output">
-      <h1> ZEN CAL </h1>
+      <div id="day"></div>
+      <div id="datetime"></div>
+      <div id="hour"></div>
     </pre>
+
     <div id="authorize-div" style="display: none">
       <div class="here">
         <img class="wow fadeInUp" data-wow-duration="2s" src="img/enso.png">
@@ -24,9 +25,10 @@
         </button>
       </div>
     </div>
-  <script type="text/javascript" src="js/wow.js"></script>
-  <script type="text/javascript">
-    new WOW().init();
-  </script>
+
+  <script type="text/javascript" src="js/moment.js"></script>
+  <script type="text/javascript" src="js/today.js"></script>
+
+
   </body>
 </html>
