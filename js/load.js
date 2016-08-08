@@ -1,9 +1,9 @@
 // Client ID from Developer Console, https://console.developers.google.com
 //developement ID (testing)
-//var CLIENT_ID = '64593916339-5dda72dnh58548dqc6pitg0dm0608ljb.apps.googleusercontent.com';
+var CLIENT_ID = '64593916339-5dda72dnh58548dqc6pitg0dm0608ljb.apps.googleusercontent.com';
 
 //heroku
-var CLIENT_ID = '64593916339-ngnshl729pn27m0gpgih2ikcc13rkop1.apps.googleusercontent.com';
+//var CLIENT_ID = '64593916339-ngnshl729pn27m0gpgih2ikcc13rkop1.apps.googleusercontent.com';
 
 //chrome ext
 //var CLIENT_ID = '64593916339-cqb7679dfsildvuk0buu7shsh5glo28v.apps.googleusercontent.com';
@@ -84,18 +84,14 @@ function listUpcomingEvents() {
 					hour = moment(when).format('H[.]mm'),
 					location = event.location
 
-					console.log(date)
+					// console.log(date)
 					// console.log(when)
-					console.log(eventdesc)
+					// console.log(eventdesc)
 
-
-				if (date != today) {
-					todayEvents.push(1)
-				}
 
 				if(date === today){
-
 					addToAgenda(eventdesc, hour, location, day, true)
+					todayEvents.push(1)
 				}
 				else if (date === tomorrow) {
 					addToAgenda(eventdesc, hour, location, day, false)
@@ -103,7 +99,7 @@ function listUpcomingEvents() {
 			}//end for
 
 			// add a happy message if no more events for the day found
-			if(todayEvents.length){
+			if(!todayEvents.length){
 				var disDiv = document.getElementById('todayanchor')
 					noEventsDiv = document.getElementById('noevents')
 				disDiv.className += " done"
