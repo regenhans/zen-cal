@@ -1,6 +1,6 @@
 var d = new Date(),
-    todayis = moment(d).format('[today is] dddd'),
-    theDate = moment(d).format("MMMM D"),
+    todayis = moment(d).format('[Today is] dddd'),
+    theDate = moment(d).format("MMMM D [,]"),
     todaytext = document.createTextNode(todayis),
     dateText = document.createTextNode(theDate),
     daydiv = document.getElementById('day'),
@@ -8,8 +8,9 @@ var d = new Date(),
     hourId = document.getElementById('hour');
 
 //day&date
-daydiv.appendChild(todaytext)
 datediv.appendChild(dateText)
+daydiv.appendChild(todaytext)
+
 
 var myVar = setInterval(myTimer, 1000);
 

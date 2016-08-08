@@ -61,14 +61,13 @@ function listUpcomingEvents() {
 	request.execute(function(resp) {
 
 		// the last 10 events
-		var events = resp.items;
-		console.log(resp.items)
+		var events = resp.items,
+			todayEvents = [];
 
 
 		//get just the events for today and tomorrow
-
-
 		if(events.length){
+
 			for (var i = 0; i < events.length; i++) {
 				var event = events[i],
 					when  = moment(event.start.dateTime),
@@ -80,72 +79,74 @@ function listUpcomingEvents() {
 					hour = moment(when).format('H[.]mm'),
 					location = event.location
 
+				//dates for all-day events
 				if (!when) {
 					when = moment(event.start.date).format('l')
 				}
+
+				if (date != today) {
+					todayEvents.push(1)
+				}
+
 				if(date === today){
-					addToStream(eventdesc, hour, location, day)
+					addToAgenda(eventdesc, hour, location, day, true)
 				}
 				else if (date === tomorrow) {
-					addToStream(eventdesc, hour, location, day)
+					addToAgenda(eventdesc, hour, location, day, false)
 				}
-				else{
-					console.log('other day');
-				}
+			}//end for
+
+			// add a happy message if no more events for the day found
+			if(todayEvents.length){
+				var disDiv = document.getElementById('todayanchor')
+					noEventsDiv = document.getElementById('noevents')
+				disDiv.className += " done"
+				noEventsDiv.innerHTML = "(No more events today)"
+				console.log(disDiv)
 			}
+
+
 		}
 
-		//format each event and add it to stream
-		// if (events.length) {
-		// 	for (i = 0; i < events.length; i++) {
-		// 		var event = events[i],
-		// 		when = event.start.dateTime,
-		// 		eventdesc = event.summary,
-		// 		day = moment(when).calendar(),
-		// 		hour = moment(when).format('H[.]mm'),
-		// 		location = event.location
-		// 		console.log(day)
-		//
-		//
-		// 		//correction for all-day events
-		// 		if (!when) {
-		// 			when = event.start.date
-		// 		}
-		// 		addToStream(eventdesc, hour, location, day)
-		// 	}
-		// } else {
-		// 	appendPre('No upcoming events found.')
-		// }
+
 
 	});
 }
 
-
-
-//function to format the info and append it to the site
-function addToStream(eventDescription, dateTime, location, day){
+function addToAgenda(eventDescription, dateTime, location, day, istoday){
 
 	var div = document.createElement('div'),
 		hourdiv = document.createElement('div'),
 		descdiv = document.createElement('div'),
+		eventDiv = document.createElement('div'),
 		descText = document.createTextNode(eventDescription),
 		timeText = document.createTextNode(dateTime),
 		calendarDay = document.createTextNode(day),
-		pre = document.getElementById('output'),
+		pre,
 		locationText,
 		dateLocationDiv = document.createElement('div');
 
+	if(istoday){
+		pre = document.getElementById('today')
+	}else{
+		pre = document.getElementById('tomorrow')
+	}
+
+	eventDiv.className += "eventdiv"
 	dateLocationDiv.className += "date-location"
-	div.className += "event"
+	div.className += "event wow"
 	hourdiv.className += "hourdiv"
 	descdiv.className += "descdiv"
+
+
 	hourdiv.appendChild(timeText)
 	descdiv.appendChild(descText)
-	dateLocationDiv.appendChild(calendarDay)
+	// dateLocationDiv.appendChild(calendarDay)
 
 	div.appendChild(hourdiv)
-	div.appendChild(descdiv)
-	div.appendChild(dateLocationDiv)
+	eventDiv.appendChild(descdiv)
+	eventDiv.appendChild(dateLocationDiv)
+	div.appendChild(eventDiv)
 
 	//handdle location
 	if(location){

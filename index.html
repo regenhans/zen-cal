@@ -2,6 +2,7 @@
   <head>
     <title>New Tab</title>
     <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    <link rel="stylesheet" href="stylesheets/animate.css" type="text/css">
     <meta charset="utf-8">
     <script type="text/javascript" charset="UTF-8" src="js/load.js"></script>
     <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
@@ -9,10 +10,23 @@
   </head>
   <body>
 
-    <pre id="output">
-      <div id="day"></div>
-      <div id="datetime"></div>
-      <div id="hour"></div>
+    <pre id="output" class="wow fadeIn" data-wow-delay="2.5s" >
+      <div class="day" id="day"></div>
+      <div class="context">
+         <span class="datetime" id="datetime"> </span>
+         <span class="hour" id="hour"></span>
+         <p class="noevents" id="noevents"></p>
+      </div>
+
+      <div id="today">
+         <h2 id="todayanchor" class="todayanchor dayanchor">Next today</h2>
+      </div>
+
+      <div class="agenda" id="tomorrow">
+         <h2 class="dayanchor">Tomorrow</h2>
+      </div>
+
+
     </pre>
 
     <div id="authorize-div" style="display: none">
@@ -28,6 +42,11 @@
 
   <script type="text/javascript" src="js/moment.js"></script>
   <script type="text/javascript" src="js/today.js"></script>
+  <script type="text/javascript" src="js/wow.js"></script>
+  <script type="text/javascript">
+      new WOW().init();
+  </script>
+
 
 
   </body>
