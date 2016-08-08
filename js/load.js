@@ -64,6 +64,7 @@ function listUpcomingEvents() {
 		var events = resp.items,
 			todayEvents = [];
 
+		console.log(events);
 
 		//get just the events for today and tomorrow
 		if(events.length){
