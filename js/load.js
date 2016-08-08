@@ -1,10 +1,10 @@
 // Client ID from Developer Console, https://console.developers.google.com
 //developement ID (testing)
-//var CLIENT_ID = '64593916339-5dda72dnh58548dqc6pitg0dm0608ljb.apps.googleusercontent.com';
+var CLIENT_ID = '64593916339-5dda72dnh58548dqc6pitg0dm0608ljb.apps.googleusercontent.com';
 
 //heroku
-var CLIENT_ID = '64593916339-ngnshl729pn27m0gpgih2ikcc13rkop1.apps.googleusercontent.com';
-//var CLIENT_ID = '64593916339-p0vll5ijitdej20dk4h9h5pj5oif7p74.apps.googleusercontent.com';
+//var CLIENT_ID = '64593916339-ngnshl729pn27m0gpgih2ikcc13rkop1.apps.googleusercontent.com';
+
 //chrome ext
 //var CLIENT_ID = '64593916339-cqb7679dfsildvuk0buu7shsh5glo28v.apps.googleusercontent.com';
 var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
@@ -64,15 +64,19 @@ function listUpcomingEvents() {
 		var events = resp.items,
 			todayEvents = [];
 
-		console.log(resp);
 
 		//get just the events for today and tomorrow
 		if(events.length){
 
 			for (var i = 0; i < events.length; i++) {
 				var event = events[i],
-					when  = moment(event.start.dateTime),
-					date = when.format('l'),
+					when  = event.start.dateTime
+
+					if (!when) {
+						when = event.start.date
+					}
+
+				var date = moment(when).format('l'),
 					today = moment(new Date()).format('l'),
 					tomorrow = moment(new Date()).add(1, 'days').format('l'),
 					eventdesc = event.summary,
@@ -80,20 +84,17 @@ function listUpcomingEvents() {
 					hour = moment(when).format('H[.]mm'),
 					location = event.location
 
-					console.log(when)
+					console.log(date)
+					// console.log(when)
 					console.log(eventdesc)
-				//dates for all-day events
-				if (!when) {
-					when = moment(event.start.date).format('l')
-				}
+
 
 				if (date != today) {
 					todayEvents.push(1)
 				}
 
 				if(date === today){
-					console.log(date)
-					console.log(today)
+
 					addToAgenda(eventdesc, hour, location, day, true)
 				}
 				else if (date === tomorrow) {
@@ -107,7 +108,6 @@ function listUpcomingEvents() {
 					noEventsDiv = document.getElementById('noevents')
 				disDiv.className += " done"
 				noEventsDiv.innerHTML = "(No more events today)"
-				console.log(disDiv)
 			}
 
 
