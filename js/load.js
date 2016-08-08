@@ -64,7 +64,7 @@ function listUpcomingEvents() {
 		var events = resp.items,
 			todayEvents = [];
 
-		console.log(events);
+		console.log(resp);
 
 		//get just the events for today and tomorrow
 		if(events.length){
@@ -80,6 +80,8 @@ function listUpcomingEvents() {
 					hour = moment(when).format('H[.]mm'),
 					location = event.location
 
+					console.log(when)
+					console.log(eventdesc)
 				//dates for all-day events
 				if (!when) {
 					when = moment(event.start.date).format('l')
