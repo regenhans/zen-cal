@@ -92,6 +92,8 @@ function listUpcomingEvents() {
 				}
 
 				if(date === today){
+					console.log(date)
+					console.log(today)
 					addToAgenda(eventdesc, hour, location, day, true)
 				}
 				else if (date === tomorrow) {
