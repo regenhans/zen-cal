@@ -1,10 +1,8 @@
 // Client ID from Developer Console, https://console.developers.google.com
 //developement ID (testing)
 //var CLIENT_ID = '64593916339-5dda72dnh58548dqc6pitg0dm0608ljb.apps.googleusercontent.com';
-
 //heroku
 var CLIENT_ID = '64593916339-ngnshl729pn27m0gpgih2ikcc13rkop1.apps.googleusercontent.com';
-
 //chrome ext
 //var CLIENT_ID = '64593916339-cqb7679dfsildvuk0buu7shsh5glo28v.apps.googleusercontent.com';
 var SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
@@ -83,11 +81,6 @@ function listUpcomingEvents() {
 					day = moment(when).calendar(),
 					hour = moment(when).format('H[.]mm'),
 					location = event.location
-
-					// console.log(date)
-					// console.log(when)
-					// console.log(eventdesc)
-
 
 				if(date === today){
 					addToAgenda(eventdesc, hour, location, day, true)
