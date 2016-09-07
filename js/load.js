@@ -107,7 +107,28 @@ function listUpcomingEvents() {
 	});
 }
 
+
+// V2 
+// var newDiv = function(className){
+// 	var div = document.createElement('div');
+// 	div.className = className;
+// 	return div;
+// };
+//
+// var addContent = function(element, content){
+// 	var text = document.createTextNode(content);
+// 	return element.appendChild(text);
+// };
+//
+//
+// addContent(newDiv('hourdiv'), 'hello world')
+
 function addToAgenda(eventDescription, dateTime, location, day, istoday){
+
+
+
+	var hourdiv = newDiv(div)
+
 
 	var div = document.createElement('div'),
 		hourdiv = document.createElement('div'),
